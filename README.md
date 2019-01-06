@@ -1,0 +1,1 @@
+# Playground for excersises from SICP course
