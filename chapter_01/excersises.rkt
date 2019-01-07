@@ -1,5 +1,6 @@
 #lang racket/base
 
+;;; 1.1
 10 ;;; 10
 
 (+ 5 3 4) ;;; 12
@@ -32,3 +33,32 @@
             ((< a b) b)
             (else -1))
     (+ a 1)) ;;; 16
+
+;;; 1.2
+(/  (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5)))))
+    (* 3 (- 6 2) (- 2 7)))
+
+;;; 1.3
+(define (sum-max-squares x y z) 
+    (cond   ((and (< x y) (< x z)) (+ (* y y) (* z z)))
+            ((and (< y x) (< y z)) (+ (* x x) (* z z)))
+            ((and (< z x) (< z y)) (+ (* x x) (* y y)))
+    )
+)
+(sum-max-squares 5 2 3)
+
+;;; 1.4
+(define (a-plus-abs-b a b)
+    ((if (> b 0) + -) a b))
+
+(a-plus-abs-b 5 -20)
+
+;;; 1.5
+(define (p) (p))
+
+(define (test x y)
+    (if (= x 0)
+        0
+        y))
+
+(test 0 (p))   ;;; infinit loop
