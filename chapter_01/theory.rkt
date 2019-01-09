@@ -2,8 +2,8 @@
 
 (define (square x) (* x x))
 (define (sum-of-squares x y)
-    (+ (square x) (square y))
-)
+    (+ (square x) (square y)))
+
 
 (sum-of-squares 3 4)
 
@@ -39,8 +39,8 @@
 (define (sqrt-iter guess x)
     (if (good-enough? guess x)
         guess
-        (sqrt-iter (improve guess x) x
-    )))
+        (sqrt-iter (improve guess x) x)))
+    
 
 (define (improve guess x)
     (average guess (/ x guess)))
